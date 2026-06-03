@@ -52,6 +52,14 @@ body {
   100% { background-position:  200% 0; }
 }
 
+@keyframes starFloat {
+  0%   { transform: translateY(0px)  rotate(0deg)   scale(1);    }
+  25%  { transform: translateY(-5px) rotate(12deg)  scale(1.08); }
+  50%  { transform: translateY(-2px) rotate(-6deg)  scale(0.94); }
+  75%  { transform: translateY(-7px) rotate(8deg)   scale(1.04); }
+  100% { transform: translateY(0px)  rotate(0deg)   scale(1);    }
+}
+
 /* ── Animation utilities ───────────────────── */
 .anim-page {
   animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -119,6 +127,11 @@ body {
 /* ── Toggle transition ─────────────────────── */
 .toggle-btn {
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ── Stars background ──────────────────────── */
+.star-float {
+  animation: starFloat var(--dur, 8s) ease-in-out infinite;
 }
 
 /* ── Tab content fade ──────────────────────── */

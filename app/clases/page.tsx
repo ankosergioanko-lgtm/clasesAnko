@@ -106,7 +106,7 @@ export default function ClasesPage() {
         <div className="flex items-start justify-between mb-10 anim-page">
           <div>
             <h1 className="text-5xl font-light tracking-tight" style={{ color: "#1C0814" }}>
-              /clasesAnko
+              /ClasesIncera ✩
             </h1>
             <p className="text-sm mt-1" style={{ color: "#C45A7A" }}>
               reserva tu plaza · paga online
