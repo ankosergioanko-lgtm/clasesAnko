@@ -152,7 +152,7 @@ export default function AdminPage() {
         {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between mb-10 anim-page">
           <div>
-            <h1 className="font-light tracking-tight" style={{ color: "#1C0814", fontSize: "clamp(1.4rem, 6vw, 3rem)" }}>/ClasesIncera</h1>
+            <h1 className="font-light tracking-tight" style={{ color: "#1C0814", fontSize: "clamp(1.4rem, 6vw, 3rem)" }}>/ClasesIncera ✩</h1>
             <p className="text-sm mt-1" style={{ color: "#C45A7A" }}>gestión · pagos · control</p>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
