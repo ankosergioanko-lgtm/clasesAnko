@@ -55,83 +55,83 @@ export default function ReservarPage() {
 
   if (!clase) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#E3DFD9" }}>
-        <p className="text-sm anim-fade" style={{ color: "#888884" }}>cargando...</p>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#F9B0C4" }}>
+        <p className="text-sm anim-fade" style={{ color: "#C45A7A" }}>cargando...</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#E3DFD9" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
       <div className="max-w-lg mx-auto">
 
         {/* Back */}
         <Link
           href={`/clases/${claseId}`}
           className="inline-flex items-center gap-2 text-sm mb-8 btn-press anim-fade"
-          style={{ color: "#888884" }}
+          style={{ color: "#C45A7A" }}
         >
-          <span className="w-8 h-8 rounded-xl flex items-center justify-center text-sm" style={{ backgroundColor: "#D8D4CE" }}>
+          <span className="w-8 h-8 rounded-xl flex items-center justify-center text-sm" style={{ backgroundColor: "#F09FBA" }}>
             ←
           </span>
           volver
         </Link>
 
         <div className="anim-page">
-          <h1 className="text-3xl font-medium mb-1" style={{ color: "#1C1C1E" }}>Reservar plaza</h1>
-          <p className="text-sm mb-8" style={{ color: "#888884" }}>
+          <h1 className="text-3xl font-medium mb-1" style={{ color: "#1C0814" }}>Reservar plaza</h1>
+          <p className="text-sm mb-8" style={{ color: "#C45A7A" }}>
             {clase.nombre} · €{clase.precio}
           </p>
         </div>
 
         {/* Resumen clase */}
-        <div className="rounded-2xl p-4 mb-6 flex items-center justify-between anim-page" style={{ backgroundColor: "#D8D4CE", animationDelay: "60ms" }}>
+        <div className="rounded-2xl p-4 mb-6 flex items-center justify-between anim-page" style={{ backgroundColor: "#F09FBA", animationDelay: "60ms" }}>
           <div>
-            <p className="font-medium" style={{ color: "#1C1C1E" }}>{clase.nombre}</p>
-            <p className="text-sm" style={{ color: "#888884" }}>{clase.lugar} · {clase.hora}</p>
+            <p className="font-medium" style={{ color: "#1C0814" }}>{clase.nombre}</p>
+            <p className="text-sm" style={{ color: "#C45A7A" }}>{clase.lugar} · {clase.hora}</p>
           </div>
-          <p className="text-lg font-medium" style={{ color: "#1C1C1E" }}>€{clase.precio}</p>
+          <p className="text-lg font-medium" style={{ color: "#1C0814" }}>€{clase.precio}</p>
         </div>
 
         {/* Form */}
         <div className="flex flex-col gap-3 mb-6 stagger">
           <div className="anim-page">
-            <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>NOMBRE</label>
+            <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>NOMBRE</label>
             <input
               type="text"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
               placeholder="Tu nombre"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
             />
           </div>
           <div className="anim-page">
-            <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>APELLIDO</label>
+            <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>APELLIDO</label>
             <input
               type="text"
               value={apellido}
               onChange={(e) => setApellido(e.target.value)}
               placeholder="Tu apellido"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
             />
           </div>
           <div className="anim-page">
-            <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>EMAIL</label>
+            <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>EMAIL</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="tu@email.com"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
             />
           </div>
         </div>
 
         {error && (
-          <p className="text-sm mb-4 rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}>
+          <p className="text-sm mb-4 rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}>
             {error}
           </p>
         )}
@@ -141,11 +141,11 @@ export default function ReservarPage() {
             onClick={handlePagar}
             disabled={loading}
             className="w-full flex items-center justify-center py-4 rounded-2xl text-base font-medium btn-press disabled:opacity-50"
-            style={{ backgroundColor: "#1C1C1E", color: "#F5F3EF" }}
+            style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
           >
             {loading ? "Redirigiendo..." : `Pagar €${clase.precio} con Bizum o tarjeta`}
           </button>
-          <p className="text-xs text-center mt-3" style={{ color: "#888884" }}>
+          <p className="text-xs text-center mt-3" style={{ color: "#C45A7A" }}>
             Pago seguro procesado por Stripe
           </p>
         </div>

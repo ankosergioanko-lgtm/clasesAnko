@@ -22,26 +22,26 @@ function ClaseCard({ clase, index }: { clase: Clase; index: number }) {
       <div
         className="rounded-3xl p-5 card-lift cursor-pointer anim-page"
         style={{
-          backgroundColor: "#D8D4CE",
+          backgroundColor: "#F09FBA",
           animationDelay: `${index * 70}ms`,
         }}
       >
         <div className="flex justify-between items-start mb-3">
-          <span className="text-xs font-medium tracking-widest" style={{ color: "#888884" }}>
+          <span className="text-xs font-medium tracking-widest" style={{ color: "#C45A7A" }}>
             {formatFecha(clase.fecha)}
           </span>
-          <span className="text-base transition-transform group-hover:translate-x-0.5" style={{ color: "#888884" }}>↗</span>
+          <span className="text-base transition-transform group-hover:translate-x-0.5" style={{ color: "#C45A7A" }}>↗</span>
         </div>
-        <h2 className="text-2xl font-medium leading-tight mb-1" style={{ color: "#1C1C1E" }}>
+        <h2 className="text-2xl font-medium leading-tight mb-1" style={{ color: "#1C0814" }}>
           {clase.nombre}
         </h2>
-        <p className="text-sm mb-8" style={{ color: "#888884" }}>
+        <p className="text-sm mb-8" style={{ color: "#C45A7A" }}>
           {clase.lugar}
         </p>
         <div className="flex items-center gap-2">
           <span
             className="text-sm px-3 py-1 rounded-full"
-            style={{ backgroundColor: "#C8C4BE", color: "#1C1C1E" }}
+            style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
           >
             €{clase.precio}
           </span>
@@ -57,25 +57,25 @@ function CalendarioItem({ clase, index }: { clase: Clase; index: number }) {
       <div
         className="rounded-2xl px-5 py-4 flex items-center justify-between card-lift cursor-pointer anim-page"
         style={{
-          backgroundColor: "#D8D4CE",
+          backgroundColor: "#F09FBA",
           animationDelay: `${index * 60}ms`,
         }}
       >
         <div>
-          <p className="text-xs tracking-widest mb-1" style={{ color: "#888884" }}>
+          <p className="text-xs tracking-widest mb-1" style={{ color: "#C45A7A" }}>
             {formatFechaCalendario(clase.fecha)} · {clase.hora}
           </p>
-          <p className="text-lg font-medium" style={{ color: "#1C1C1E" }}>{clase.nombre}</p>
-          <p className="text-sm" style={{ color: "#888884" }}>{clase.lugar}</p>
+          <p className="text-lg font-medium" style={{ color: "#1C0814" }}>{clase.nombre}</p>
+          <p className="text-sm" style={{ color: "#C45A7A" }}>{clase.lugar}</p>
         </div>
         <div className="flex items-center gap-3">
           <span
             className="text-sm px-3 py-1 rounded-full"
-            style={{ backgroundColor: "#C8C4BE", color: "#1C1C1E" }}
+            style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
           >
             €{clase.precio}
           </span>
-          <span style={{ color: "#888884" }}>↗</span>
+          <span style={{ color: "#C45A7A" }}>↗</span>
         </div>
       </div>
     </Link>
@@ -99,16 +99,16 @@ export default function ClasesPage() {
   const sorted = clases.slice().sort((a, b) => a.fecha.localeCompare(b.fecha))
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#E3DFD9" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
         <div className="flex items-start justify-between mb-10 anim-page">
           <div>
-            <h1 className="text-5xl font-light tracking-tight" style={{ color: "#1C1C1E" }}>
+            <h1 className="text-5xl font-light tracking-tight" style={{ color: "#1C0814" }}>
               /clasesAnko
             </h1>
-            <p className="text-sm mt-1" style={{ color: "#888884" }}>
+            <p className="text-sm mt-1" style={{ color: "#C45A7A" }}>
               reserva tu plaza · paga online
             </p>
           </div>
@@ -119,8 +119,8 @@ export default function ClasesPage() {
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
               style={
                 vista === "galeria"
-                  ? { backgroundColor: "#1C1C1E", color: "#F5F3EF" }
-                  : { backgroundColor: "#D8D4CE", color: "#1C1C1E" }
+                  ? { backgroundColor: "#FFF0F5", color: "#1C0814" }
+                  : { backgroundColor: "#F09FBA", color: "#1C0814" }
               }
             >
               galería
@@ -130,8 +130,8 @@ export default function ClasesPage() {
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
               style={
                 vista === "calendario"
-                  ? { backgroundColor: "#1C1C1E", color: "#F5F3EF" }
-                  : { backgroundColor: "#D8D4CE", color: "#1C1C1E" }
+                  ? { backgroundColor: "#FFF0F5", color: "#1C0814" }
+                  : { backgroundColor: "#F09FBA", color: "#1C0814" }
               }
             >
               calendario
@@ -146,12 +146,12 @@ export default function ClasesPage() {
               <div
                 key={i}
                 className="rounded-3xl h-48 anim-fade"
-                style={{ backgroundColor: "#D8D4CE", animationDelay: `${i * 80}ms` }}
+                style={{ backgroundColor: "#F09FBA", animationDelay: `${i * 80}ms` }}
               />
             ))}
           </div>
         ) : clases.length === 0 ? (
-          <p className="text-sm anim-fade" style={{ color: "#888884" }}>No hay clases disponibles.</p>
+          <p className="text-sm anim-fade" style={{ color: "#C45A7A" }}>No hay clases disponibles.</p>
         ) : vista === "galeria" ? (
           <div key="galeria" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 tab-content">
             {sorted.map((c, i) => <ClaseCard key={c.id} clase={c} index={i} />)}

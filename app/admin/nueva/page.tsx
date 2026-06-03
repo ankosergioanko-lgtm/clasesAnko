@@ -42,7 +42,7 @@ export default function NuevaClasePage() {
   }
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#E3DFD9" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
       <div className="max-w-lg mx-auto">
 
         {/* Back */}
@@ -50,93 +50,93 @@ export default function NuevaClasePage() {
           <Link
             href="/admin"
             className="w-9 h-9 rounded-xl flex items-center justify-center text-sm btn-press"
-            style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+            style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
           >
             ←
           </Link>
-          <h1 className="text-3xl font-medium" style={{ color: "#1C1C1E" }}>Nueva clase</h1>
+          <h1 className="text-3xl font-medium" style={{ color: "#1C0814" }}>Nueva clase</h1>
         </div>
 
         <div className="flex flex-col gap-4 stagger">
 
           {/* Nombre */}
           <div className="anim-page">
-            <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>NOMBRE DE LA CLASE</label>
+            <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>NOMBRE DE LA CLASE</label>
             <input
               type="text"
               value={form.nombre}
               onChange={(e) => set("nombre", e.target.value)}
               placeholder="Ej: Clase Glow Up x Javi Berga"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
             />
           </div>
 
           {/* Fecha y hora */}
           <div className="grid grid-cols-2 gap-3 anim-page">
             <div>
-              <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>FECHA</label>
+              <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>FECHA</label>
               <input
                 type="date"
                 value={form.fecha}
                 onChange={(e) => set("fecha", e.target.value)}
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
               />
             </div>
             <div>
-              <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>HORA</label>
+              <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>HORA</label>
               <input
                 type="time"
                 value={form.hora}
                 onChange={(e) => set("hora", e.target.value)}
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
               />
             </div>
           </div>
 
           {/* Lugar */}
           <div className="anim-page">
-            <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>LUGAR</label>
+            <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>LUGAR</label>
             <input
               type="text"
               value={form.lugar}
               onChange={(e) => set("lugar", e.target.value)}
               placeholder="Ej: Sala Apollo"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
             />
           </div>
 
           {/* Precio y Capacidad */}
           <div className="grid grid-cols-2 gap-3 anim-page">
             <div>
-              <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>PRECIO (€)</label>
+              <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>PRECIO (€)</label>
               <input
                 type="number"
                 value={form.precio}
                 onChange={(e) => set("precio", e.target.value)}
                 min="0"
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
               />
             </div>
             <div>
-              <label className="text-xs tracking-widest block mb-2" style={{ color: "#888884" }}>CAPACIDAD</label>
+              <label className="text-xs tracking-widest block mb-2" style={{ color: "#C45A7A" }}>CAPACIDAD</label>
               <input
                 type="number"
                 value={form.capacidad}
                 onChange={(e) => set("capacidad", e.target.value)}
                 min="1"
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
               />
             </div>
           </div>
 
           {error && (
-            <p className="text-sm rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}>
+            <p className="text-sm rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}>
               {error}
             </p>
           )}
@@ -145,7 +145,7 @@ export default function NuevaClasePage() {
             onClick={handleGuardar}
             disabled={loading}
             className="w-full py-4 rounded-2xl text-sm font-medium btn-press disabled:opacity-50 anim-page"
-            style={{ backgroundColor: "#1C1C1E", color: "#F5F3EF", animationDelay: "240ms" }}
+            style={{ backgroundColor: "#FFF0F5", color: "#1C0814", animationDelay: "240ms" }}
           >
             {loading ? "Guardando..." : "Crear clase"}
           </button>

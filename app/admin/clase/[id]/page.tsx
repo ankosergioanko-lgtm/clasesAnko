@@ -34,16 +34,16 @@ function StatCard({ label, value, prefix = "", green = false, delay = 0, subtitl
   return (
     <div
       className="rounded-2xl p-5 anim-page"
-      style={{ backgroundColor: "#D8D4CE", animationDelay: `${delay}ms` }}
+      style={{ backgroundColor: "#F09FBA", animationDelay: `${delay}ms` }}
     >
-      <p className="text-xs tracking-widest mb-3" style={{ color: "#888884" }}>{label}</p>
+      <p className="text-xs tracking-widest mb-3" style={{ color: "#C45A7A" }}>{label}</p>
       <p
         className="text-5xl font-light mb-1"
-        style={{ color: green ? "#4ADE80" : "#1C1C1E" }}
+        style={{ color: green ? "#4ADE80" : "#1C0814" }}
       >
         {prefix}{display % 1 === 0 ? Math.round(display) : display.toFixed(2)}
       </p>
-      {subtitle && <p className="text-xs" style={{ color: "#888884" }}>{subtitle}</p>}
+      {subtitle && <p className="text-xs" style={{ color: "#C45A7A" }}>{subtitle}</p>}
     </div>
   )
 }
@@ -125,8 +125,8 @@ export default function AdminClasePage() {
 
   if (loading || !clase) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#E3DFD9" }}>
-        <p className="text-sm anim-fade" style={{ color: "#888884" }}>cargando...</p>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#F9B0C4" }}>
+        <p className="text-sm anim-fade" style={{ color: "#C45A7A" }}>cargando...</p>
       </div>
     )
   }
@@ -141,7 +141,7 @@ export default function AdminClasePage() {
   const ganancias = totalRecaudado - totalGastos
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#E3DFD9" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
       <div className="max-w-3xl mx-auto">
 
         {/* Header */}
@@ -150,15 +150,15 @@ export default function AdminClasePage() {
             <Link
               href="/admin"
               className="w-9 h-9 rounded-xl flex items-center justify-center text-sm btn-press"
-              style={{ backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
             >
               ←
             </Link>
-            <h1 className="text-3xl font-medium leading-tight" style={{ color: "#1C1C1E" }}>
+            <h1 className="text-3xl font-medium leading-tight" style={{ color: "#1C0814" }}>
               {clase.nombre}
             </h1>
           </div>
-          <p className="text-sm mb-8 ml-12" style={{ color: "#888884" }}>
+          <p className="text-sm mb-8 ml-12" style={{ color: "#C45A7A" }}>
             {formatFechaCorta(clase.fecha)} · {clase.lugar}
           </p>
         </div>
@@ -170,7 +170,7 @@ export default function AdminClasePage() {
               key={t}
               onClick={() => setTab(t)}
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
-              style={tab === t ? { backgroundColor: "#1C1C1E", color: "#F5F3EF" } : { backgroundColor: "#D8D4CE", color: "#1C1C1E" }}
+              style={tab === t ? { backgroundColor: "#FFF0F5", color: "#1C0814" } : { backgroundColor: "#F09FBA", color: "#1C0814" }}
             >
               {t}
             </button>
@@ -187,14 +187,14 @@ export default function AdminClasePage() {
             </div>
 
             {/* Buscar + agregar */}
-            <div className="rounded-2xl p-4 mb-5 flex flex-col gap-3 anim-page" style={{ backgroundColor: "#D8D4CE", animationDelay: "120ms" }}>
+            <div className="rounded-2xl p-4 mb-5 flex flex-col gap-3 anim-page" style={{ backgroundColor: "#F09FBA", animationDelay: "120ms" }}>
               <input
                 type="text"
                 value={buscar}
                 onChange={(e) => setBuscar(e.target.value)}
                 placeholder="buscar..."
                 className="w-full rounded-xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#C8C4BE", color: "#1C1C1E" }}
+                style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
               />
               <div className="flex gap-2">
                 <input
@@ -205,24 +205,24 @@ export default function AdminClasePage() {
                   onKeyDown={(e) => e.key === "Enter" && handleAgregar()}
                   placeholder="nombre"
                   className="flex-1 rounded-xl px-4 py-3 text-sm input-focus"
-                  style={{ backgroundColor: "#C8C4BE", color: "#1C1C1E" }}
+                  style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
                 />
                 <input
                   type="number"
                   value={nuevoMonto}
                   onChange={(e) => setNuevoMonto(Number(e.target.value))}
                   className="w-20 rounded-xl px-3 py-3 text-sm text-center input-focus"
-                  style={{ backgroundColor: "#C8C4BE", color: "#1C1C1E" }}
+                  style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
                 />
                 <button
                   onClick={handleAgregar}
                   className="w-12 h-12 rounded-xl flex items-center justify-center text-lg font-medium btn-press btn-pop"
-                  style={{ backgroundColor: "#1C1C1E", color: "#F5F3EF" }}
+                  style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
                 >
                   +
                 </button>
               </div>
-              <p className="text-xs" style={{ color: "#888884" }}>
+              <p className="text-xs" style={{ color: "#C45A7A" }}>
                 Ingresa nombre, monto y agregar. Luego marca como pagado.
               </p>
             </div>
@@ -230,7 +230,7 @@ export default function AdminClasePage() {
             {/* INVITADOS */}
             {invitados.length > 0 && (
               <div className="mb-4">
-                <p className="text-xs tracking-widest mb-2 flex items-center gap-1" style={{ color: "#888884" }}>
+                <p className="text-xs tracking-widest mb-2 flex items-center gap-1" style={{ color: "#C45A7A" }}>
                   <span>⭐</span> INVITADOS
                 </p>
                 <div className="flex flex-col gap-2">
@@ -238,7 +238,7 @@ export default function AdminClasePage() {
                     <div
                       key={r.id}
                       className="rounded-2xl px-4 py-3 flex items-center justify-between anim-row"
-                      style={{ backgroundColor: "#D8D4CE" }}
+                      style={{ backgroundColor: "#F09FBA" }}
                     >
                       <div className="flex items-center gap-3">
                         <input
@@ -248,18 +248,18 @@ export default function AdminClasePage() {
                           className="w-4 h-4 rounded accent-stone-800"
                         />
                         <div>
-                          <p className="font-medium text-sm" style={{ color: "#1C1C1E" }}>
+                          <p className="font-medium text-sm" style={{ color: "#1C0814" }}>
                             {r.nombre} {r.apellido}
                           </p>
-                          <p className="text-xs" style={{ color: "#888884" }}>€{r.monto.toFixed(2)}</p>
+                          <p className="text-xs" style={{ color: "#C45A7A" }}>€{r.monto.toFixed(2)}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-xs tracking-widest" style={{ color: "#888884" }}>INVITADO</span>
+                        <span className="text-xs tracking-widest" style={{ color: "#C45A7A" }}>INVITADO</span>
                         <button
                           onClick={() => handleEliminar(r.id)}
                           className="text-xs hover:opacity-60 btn-press"
-                          style={{ color: "#888884" }}
+                          style={{ color: "#C45A7A" }}
                         >
                           eliminar
                         </button>
@@ -273,7 +273,7 @@ export default function AdminClasePage() {
             {/* CONFIRMADOS */}
             {confirmados.length > 0 && (
               <div>
-                <p className="text-xs tracking-widest mb-2 flex items-center gap-1" style={{ color: "#888884" }}>
+                <p className="text-xs tracking-widest mb-2 flex items-center gap-1" style={{ color: "#C45A7A" }}>
                   <span>✓</span> CONFIRMADOS
                 </p>
                 <div className="flex flex-col gap-2">
@@ -281,7 +281,7 @@ export default function AdminClasePage() {
                     <div
                       key={r.id}
                       className="rounded-2xl px-4 py-3 flex items-center justify-between anim-row"
-                      style={{ backgroundColor: "#D8D4CE" }}
+                      style={{ backgroundColor: "#F09FBA" }}
                     >
                       <div className="flex items-center gap-3">
                         <input
@@ -291,18 +291,18 @@ export default function AdminClasePage() {
                           className="w-4 h-4 rounded accent-stone-800"
                         />
                         <div>
-                          <p className="font-medium text-sm" style={{ color: "#1C1C1E" }}>
+                          <p className="font-medium text-sm" style={{ color: "#1C0814" }}>
                             {r.nombre} {r.apellido}
                           </p>
-                          <p className="text-xs" style={{ color: "#888884" }}>€{r.monto.toFixed(2)}</p>
+                          <p className="text-xs" style={{ color: "#C45A7A" }}>€{r.monto.toFixed(2)}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-xs tracking-widest" style={{ color: "#1C1C1E" }}>CONFIRMADO</span>
+                        <span className="text-xs tracking-widest" style={{ color: "#1C0814" }}>CONFIRMADO</span>
                         <button
                           onClick={() => handleEliminar(r.id)}
                           className="text-xs hover:opacity-60 btn-press"
-                          style={{ color: "#888884" }}
+                          style={{ color: "#C45A7A" }}
                         >
                           eliminar
                         </button>
@@ -314,7 +314,7 @@ export default function AdminClasePage() {
             )}
 
             {reservas.length === 0 && (
-              <p className="text-sm text-center py-8 anim-fade" style={{ color: "#888884" }}>
+              <p className="text-sm text-center py-8 anim-fade" style={{ color: "#C45A7A" }}>
                 Aún no hay reservas para esta clase.
               </p>
             )}
@@ -346,35 +346,35 @@ export default function AdminClasePage() {
             {/* Gastos */}
             <div
               className="rounded-2xl overflow-hidden anim-page"
-              style={{ backgroundColor: "#D8D4CE", animationDelay: "160ms" }}
+              style={{ backgroundColor: "#F09FBA", animationDelay: "160ms" }}
             >
-              <p className="text-xs tracking-widest px-5 pt-5 pb-3" style={{ color: "#888884" }}>
+              <p className="text-xs tracking-widest px-5 pt-5 pb-3" style={{ color: "#C45A7A" }}>
                 GASTOS
               </p>
 
               {gastos.map((g, i) => (
                 <div key={i}>
                   <div className="flex items-center px-5 py-3">
-                    <p className="flex-1 text-sm font-medium" style={{ color: "#1C1C1E" }}>{g.nombre}</p>
+                    <p className="flex-1 text-sm font-medium" style={{ color: "#1C0814" }}>{g.nombre}</p>
                     <input
                       type="number"
                       value={g.monto === 0 ? "" : g.monto}
                       onChange={(e) => updateGasto(i, Number(e.target.value) || 0)}
                       placeholder={`€0 (opcional)`}
                       className="w-40 rounded-xl px-3 py-2 text-sm text-right input-focus"
-                      style={{ backgroundColor: "#C8C4BE", color: "#1C1C1E" }}
+                      style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
                     />
                   </div>
                   {i < gastos.length - 1 && (
-                    <div className="mx-5" style={{ height: "1px", backgroundColor: "#C8C4BE" }} />
+                    <div className="mx-5" style={{ height: "1px", backgroundColor: "#E8A5BC" }} />
                   )}
                 </div>
               ))}
 
-              <div className="mx-5" style={{ height: "1px", backgroundColor: "#C8C4BE" }} />
+              <div className="mx-5" style={{ height: "1px", backgroundColor: "#E8A5BC" }} />
               <div className="flex items-center px-5 py-4">
-                <p className="flex-1 text-sm" style={{ color: "#888884" }}>Total gastos</p>
-                <p className="text-sm font-medium" style={{ color: "#1C1C1E" }}>
+                <p className="flex-1 text-sm" style={{ color: "#C45A7A" }}>Total gastos</p>
+                <p className="text-sm font-medium" style={{ color: "#1C0814" }}>
                   €{totalGastos.toFixed(2)}
                 </p>
               </div>
@@ -383,18 +383,18 @@ export default function AdminClasePage() {
             {/* Detalle pagos */}
             {confirmados.length > 0 && (
               <div className="mt-5 anim-page" style={{ animationDelay: "240ms" }}>
-                <p className="text-xs tracking-widest mb-2" style={{ color: "#888884" }}>PAGOS RECIBIDOS</p>
+                <p className="text-xs tracking-widest mb-2" style={{ color: "#C45A7A" }}>PAGOS RECIBIDOS</p>
                 <div className="flex flex-col gap-2">
                   {confirmados.map((r) => (
                     <div
                       key={r.id}
                       className="rounded-2xl px-4 py-3 flex items-center justify-between anim-row"
-                      style={{ backgroundColor: "#D8D4CE" }}
+                      style={{ backgroundColor: "#F09FBA" }}
                     >
-                      <p className="font-medium text-sm" style={{ color: "#1C1C1E" }}>
+                      <p className="font-medium text-sm" style={{ color: "#1C0814" }}>
                         {r.nombre} {r.apellido}
                       </p>
-                      <p className="text-sm font-medium" style={{ color: "#1C1C1E" }}>€{r.monto.toFixed(2)}</p>
+                      <p className="text-sm font-medium" style={{ color: "#1C0814" }}>€{r.monto.toFixed(2)}</p>
                     </div>
                   ))}
                 </div>
