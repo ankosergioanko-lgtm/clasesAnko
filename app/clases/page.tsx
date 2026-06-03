@@ -22,7 +22,7 @@ function ClaseCard({ clase, index }: { clase: Clase; index: number }) {
       <div
         className="rounded-3xl p-5 card-lift cursor-pointer anim-page"
         style={{
-          backgroundColor: "#F09FBA",
+          backgroundColor: "#F7CEDF",
           animationDelay: `${index * 70}ms`,
         }}
       >
@@ -41,7 +41,7 @@ function ClaseCard({ clase, index }: { clase: Clase; index: number }) {
         <div className="flex items-center gap-2">
           <span
             className="text-sm px-3 py-1 rounded-full"
-            style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
+            style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}
           >
             €{clase.precio}
           </span>
@@ -57,7 +57,7 @@ function CalendarioItem({ clase, index }: { clase: Clase; index: number }) {
       <div
         className="rounded-2xl px-5 py-4 flex items-center justify-between card-lift cursor-pointer anim-page"
         style={{
-          backgroundColor: "#F09FBA",
+          backgroundColor: "#F7CEDF",
           animationDelay: `${index * 60}ms`,
         }}
       >
@@ -71,7 +71,7 @@ function CalendarioItem({ clase, index }: { clase: Clase; index: number }) {
         <div className="flex items-center gap-3">
           <span
             className="text-sm px-3 py-1 rounded-full"
-            style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
+            style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}
           >
             €{clase.precio}
           </span>
@@ -99,7 +99,7 @@ export default function ClasesPage() {
   const sorted = clases.slice().sort((a, b) => a.fecha.localeCompare(b.fecha))
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#FDE8F3" }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
@@ -119,8 +119,8 @@ export default function ClasesPage() {
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
               style={
                 vista === "galeria"
-                  ? { backgroundColor: "#FFF0F5", color: "#1C0814" }
-                  : { backgroundColor: "#F09FBA", color: "#1C0814" }
+                  ? { backgroundColor: "#FFFFFF", color: "#1C0814" }
+                  : { backgroundColor: "#F7CEDF", color: "#1C0814" }
               }
             >
               galería
@@ -130,8 +130,8 @@ export default function ClasesPage() {
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
               style={
                 vista === "calendario"
-                  ? { backgroundColor: "#FFF0F5", color: "#1C0814" }
-                  : { backgroundColor: "#F09FBA", color: "#1C0814" }
+                  ? { backgroundColor: "#FFFFFF", color: "#1C0814" }
+                  : { backgroundColor: "#F7CEDF", color: "#1C0814" }
               }
             >
               calendario
@@ -146,7 +146,7 @@ export default function ClasesPage() {
               <div
                 key={i}
                 className="rounded-3xl h-48 anim-fade"
-                style={{ backgroundColor: "#F09FBA", animationDelay: `${i * 80}ms` }}
+                style={{ backgroundColor: "#F7CEDF", animationDelay: `${i * 80}ms` }}
               />
             ))}
           </div>

@@ -16,7 +16,7 @@ function ClaseCardAdmin({ clase, index, onDelete }: { clase: Clase; index: numbe
   return (
     <div
       className="rounded-3xl p-5 card-lift anim-page"
-      style={{ backgroundColor: "#F09FBA", animationDelay: `${index * 70}ms` }}
+      style={{ backgroundColor: "#F7CEDF", animationDelay: `${index * 70}ms` }}
     >
       <div className="flex justify-between items-start mb-3">
         <span className="text-xs font-medium tracking-widest" style={{ color: "#C45A7A" }}>
@@ -37,7 +37,7 @@ function ClaseCardAdmin({ clase, index, onDelete }: { clase: Clase; index: numbe
         {clase.lugar}
       </p>
       <div className="flex items-center justify-between">
-        <span className="text-sm px-3 py-1 rounded-full" style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}>
+        <span className="text-sm px-3 py-1 rounded-full" style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}>
           €{clase.precio}
         </span>
         <button
@@ -56,7 +56,7 @@ function CalendarioItemAdmin({ clase, index, onDelete }: { clase: Clase; index: 
   return (
     <div
       className="rounded-2xl px-5 py-4 flex items-center justify-between card-lift anim-page"
-      style={{ backgroundColor: "#F09FBA", animationDelay: `${index * 60}ms` }}
+      style={{ backgroundColor: "#F7CEDF", animationDelay: `${index * 60}ms` }}
     >
       <div>
         <p className="text-xs tracking-widest mb-1" style={{ color: "#C45A7A" }}>
@@ -66,7 +66,7 @@ function CalendarioItemAdmin({ clase, index, onDelete }: { clase: Clase; index: 
         <p className="text-sm" style={{ color: "#C45A7A" }}>{clase.lugar}</p>
       </div>
       <div className="flex items-center gap-3">
-        <span className="text-sm px-3 py-1 rounded-full" style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}>
+        <span className="text-sm px-3 py-1 rounded-full" style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}>
           €{clase.precio}
         </span>
         <Link href={`/admin/clase/${clase.id}`} className="text-base btn-press" style={{ color: "#C45A7A" }}>↗</Link>
@@ -112,7 +112,7 @@ export default function AdminPage() {
 
   if (!authed) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: "#F9B0C4" }}>
+      <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: "#FDE8F3" }}>
         <div className="w-full max-w-sm anim-page">
           <h1 className="text-4xl font-light mb-2" style={{ color: "#1C0814" }}>/admin</h1>
           <p className="text-sm mb-8" style={{ color: "#C45A7A" }}>gestión · pagos · control</p>
@@ -123,7 +123,7 @@ export default function AdminPage() {
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
             placeholder="contraseña"
             className="w-full rounded-2xl px-4 py-3 text-sm input-focus mb-3"
-            style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+            style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
           />
           {pwError && (
             <p className="text-xs mb-3 anim-scale" style={{ color: "#C45A7A" }}>Contraseña incorrecta</p>
@@ -131,7 +131,7 @@ export default function AdminPage() {
           <button
             onClick={handleLogin}
             className="w-full py-3 rounded-2xl text-sm font-medium btn-press"
-            style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
+            style={{ backgroundColor: "#FFFFFF", color: "#1C0814" }}
           >
             Entrar
           </button>
@@ -146,7 +146,7 @@ export default function AdminPage() {
   const sorted = clases.slice().sort((a, b) => a.fecha.localeCompare(b.fecha))
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#FDE8F3" }}>
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
@@ -159,21 +159,21 @@ export default function AdminPage() {
             <Link
               href="/admin/nueva"
               className="px-4 py-2 rounded-2xl text-sm font-medium btn-press"
-              style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
+              style={{ backgroundColor: "#FFFFFF", color: "#1C0814" }}
             >
               + nueva clase
             </Link>
             <button
               onClick={() => setVista("galeria")}
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
-              style={vista === "galeria" ? { backgroundColor: "#FFF0F5", color: "#1C0814" } : { backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={vista === "galeria" ? { backgroundColor: "#FFFFFF", color: "#1C0814" } : { backgroundColor: "#F7CEDF", color: "#1C0814" }}
             >
               galería
             </button>
             <button
               onClick={() => setVista("calendario")}
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
-              style={vista === "calendario" ? { backgroundColor: "#FFF0F5", color: "#1C0814" } : { backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={vista === "calendario" ? { backgroundColor: "#FFFFFF", color: "#1C0814" } : { backgroundColor: "#F7CEDF", color: "#1C0814" }}
             >
               calendario
             </button>
@@ -184,13 +184,13 @@ export default function AdminPage() {
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="rounded-3xl h-48 anim-fade" style={{ backgroundColor: "#F09FBA", animationDelay: `${i * 80}ms` }} />
+              <div key={i} className="rounded-3xl h-48 anim-fade" style={{ backgroundColor: "#F7CEDF", animationDelay: `${i * 80}ms` }} />
             ))}
           </div>
         ) : clases.length === 0 ? (
           <div className="text-center py-16 anim-fade">
             <p className="text-sm mb-4" style={{ color: "#C45A7A" }}>No hay clases todavía.</p>
-            <Link href="/admin/nueva" className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium btn-press" style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}>
+            <Link href="/admin/nueva" className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium btn-press" style={{ backgroundColor: "#FFFFFF", color: "#1C0814" }}>
               Crear primera clase
             </Link>
           </div>

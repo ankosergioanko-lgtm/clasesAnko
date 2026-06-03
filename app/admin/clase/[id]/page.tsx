@@ -34,7 +34,7 @@ function StatCard({ label, value, prefix = "", green = false, delay = 0, subtitl
   return (
     <div
       className="rounded-2xl p-5 anim-page"
-      style={{ backgroundColor: "#F09FBA", animationDelay: `${delay}ms` }}
+      style={{ backgroundColor: "#F7CEDF", animationDelay: `${delay}ms` }}
     >
       <p className="text-xs tracking-widest mb-3" style={{ color: "#C45A7A" }}>{label}</p>
       <p
@@ -125,7 +125,7 @@ export default function AdminClasePage() {
 
   if (loading || !clase) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#F9B0C4" }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#FDE8F3" }}>
         <p className="text-sm anim-fade" style={{ color: "#C45A7A" }}>cargando...</p>
       </div>
     )
@@ -141,7 +141,7 @@ export default function AdminClasePage() {
   const ganancias = totalRecaudado - totalGastos
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#FDE8F3" }}>
       <div className="max-w-3xl mx-auto">
 
         {/* Header */}
@@ -150,7 +150,7 @@ export default function AdminClasePage() {
             <Link
               href="/admin"
               className="w-9 h-9 rounded-xl flex items-center justify-center text-sm btn-press"
-              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
             >
               ←
             </Link>
@@ -170,7 +170,7 @@ export default function AdminClasePage() {
               key={t}
               onClick={() => setTab(t)}
               className="px-4 py-2 rounded-2xl text-sm font-medium toggle-btn btn-press"
-              style={tab === t ? { backgroundColor: "#FFF0F5", color: "#1C0814" } : { backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={tab === t ? { backgroundColor: "#FFFFFF", color: "#1C0814" } : { backgroundColor: "#F7CEDF", color: "#1C0814" }}
             >
               {t}
             </button>
@@ -187,14 +187,14 @@ export default function AdminClasePage() {
             </div>
 
             {/* Buscar + agregar */}
-            <div className="rounded-2xl p-4 mb-5 flex flex-col gap-3 anim-page" style={{ backgroundColor: "#F09FBA", animationDelay: "120ms" }}>
+            <div className="rounded-2xl p-4 mb-5 flex flex-col gap-3 anim-page" style={{ backgroundColor: "#F7CEDF", animationDelay: "120ms" }}>
               <input
                 type="text"
                 value={buscar}
                 onChange={(e) => setBuscar(e.target.value)}
                 placeholder="buscar..."
                 className="w-full rounded-xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
+                style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}
               />
               <div className="flex gap-2">
                 <input
@@ -205,19 +205,19 @@ export default function AdminClasePage() {
                   onKeyDown={(e) => e.key === "Enter" && handleAgregar()}
                   placeholder="nombre"
                   className="flex-1 rounded-xl px-4 py-3 text-sm input-focus"
-                  style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
+                  style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}
                 />
                 <input
                   type="number"
                   value={nuevoMonto}
                   onChange={(e) => setNuevoMonto(Number(e.target.value))}
                   className="w-20 rounded-xl px-3 py-3 text-sm text-center input-focus"
-                  style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
+                  style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}
                 />
                 <button
                   onClick={handleAgregar}
                   className="w-12 h-12 rounded-xl flex items-center justify-center text-lg font-medium btn-press btn-pop"
-                  style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
+                  style={{ backgroundColor: "#FFFFFF", color: "#1C0814" }}
                 >
                   +
                 </button>
@@ -238,7 +238,7 @@ export default function AdminClasePage() {
                     <div
                       key={r.id}
                       className="rounded-2xl px-4 py-3 flex items-center justify-between anim-row"
-                      style={{ backgroundColor: "#F09FBA" }}
+                      style={{ backgroundColor: "#F7CEDF" }}
                     >
                       <div className="flex items-center gap-3">
                         <input
@@ -281,7 +281,7 @@ export default function AdminClasePage() {
                     <div
                       key={r.id}
                       className="rounded-2xl px-4 py-3 flex items-center justify-between anim-row"
-                      style={{ backgroundColor: "#F09FBA" }}
+                      style={{ backgroundColor: "#F7CEDF" }}
                     >
                       <div className="flex items-center gap-3">
                         <input
@@ -346,7 +346,7 @@ export default function AdminClasePage() {
             {/* Gastos */}
             <div
               className="rounded-2xl overflow-hidden anim-page"
-              style={{ backgroundColor: "#F09FBA", animationDelay: "160ms" }}
+              style={{ backgroundColor: "#F7CEDF", animationDelay: "160ms" }}
             >
               <p className="text-xs tracking-widest px-5 pt-5 pb-3" style={{ color: "#C45A7A" }}>
                 GASTOS
@@ -362,16 +362,16 @@ export default function AdminClasePage() {
                       onChange={(e) => updateGasto(i, Number(e.target.value) || 0)}
                       placeholder={`€0 (opcional)`}
                       className="w-40 rounded-xl px-3 py-2 text-sm text-right input-focus"
-                      style={{ backgroundColor: "#E8A5BC", color: "#1C0814" }}
+                      style={{ backgroundColor: "#F0C4D4", color: "#1C0814" }}
                     />
                   </div>
                   {i < gastos.length - 1 && (
-                    <div className="mx-5" style={{ height: "1px", backgroundColor: "#E8A5BC" }} />
+                    <div className="mx-5" style={{ height: "1px", backgroundColor: "#F0C4D4" }} />
                   )}
                 </div>
               ))}
 
-              <div className="mx-5" style={{ height: "1px", backgroundColor: "#E8A5BC" }} />
+              <div className="mx-5" style={{ height: "1px", backgroundColor: "#F0C4D4" }} />
               <div className="flex items-center px-5 py-4">
                 <p className="flex-1 text-sm" style={{ color: "#C45A7A" }}>Total gastos</p>
                 <p className="text-sm font-medium" style={{ color: "#1C0814" }}>
@@ -389,7 +389,7 @@ export default function AdminClasePage() {
                     <div
                       key={r.id}
                       className="rounded-2xl px-4 py-3 flex items-center justify-between anim-row"
-                      style={{ backgroundColor: "#F09FBA" }}
+                      style={{ backgroundColor: "#F7CEDF" }}
                     >
                       <p className="font-medium text-sm" style={{ color: "#1C0814" }}>
                         {r.nombre} {r.apellido}

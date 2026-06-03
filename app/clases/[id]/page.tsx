@@ -14,7 +14,7 @@ export default async function ClasePage({ params }: { params: Promise<{ id: stri
   if (!clase || !clase.activa) notFound()
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#FDE8F3" }}>
       <div className="max-w-2xl mx-auto">
 
         {/* Back */}
@@ -25,7 +25,7 @@ export default async function ClasePage({ params }: { params: Promise<{ id: stri
         >
           <span
             className="w-8 h-8 rounded-xl flex items-center justify-center text-sm"
-            style={{ backgroundColor: "#F09FBA" }}
+            style={{ backgroundColor: "#F7CEDF" }}
           >
             ←
           </span>
@@ -44,19 +44,19 @@ export default async function ClasePage({ params }: { params: Promise<{ id: stri
 
         {/* Info cards */}
         <div className="grid grid-cols-2 gap-3 mb-6 stagger">
-          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F09FBA" }}>
+          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F7CEDF" }}>
             <p className="text-xs tracking-widest mb-2" style={{ color: "#C45A7A" }}>LUGAR</p>
             <p className="text-lg font-medium" style={{ color: "#1C0814" }}>{clase.lugar}</p>
           </div>
-          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F09FBA" }}>
+          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F7CEDF" }}>
             <p className="text-xs tracking-widest mb-2" style={{ color: "#C45A7A" }}>PRECIO</p>
             <p className="text-lg font-medium" style={{ color: "#1C0814" }}>€{clase.precio}</p>
           </div>
-          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F09FBA" }}>
+          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F7CEDF" }}>
             <p className="text-xs tracking-widest mb-2" style={{ color: "#C45A7A" }}>FECHA</p>
             <p className="text-lg font-medium" style={{ color: "#1C0814" }}>{formatFechaLarga(clase.fecha)}</p>
           </div>
-          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F09FBA" }}>
+          <div className="rounded-2xl p-5 anim-page" style={{ backgroundColor: "#F7CEDF" }}>
             <p className="text-xs tracking-widest mb-2" style={{ color: "#C45A7A" }}>HORA</p>
             <p className="text-lg font-medium" style={{ color: "#1C0814" }}>{clase.hora}</p>
           </div>
@@ -67,7 +67,7 @@ export default async function ClasePage({ params }: { params: Promise<{ id: stri
           <Link
             href={`/reservar/${clase.id}`}
             className="w-full flex items-center justify-center py-4 rounded-2xl text-base font-medium btn-press"
-            style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
+            style={{ backgroundColor: "#FFFFFF", color: "#1C0814" }}
           >
             Reservar plaza — €{clase.precio}
           </Link>

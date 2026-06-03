@@ -42,7 +42,7 @@ export default function NuevaClasePage() {
   }
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#FDE8F3" }}>
       <div className="max-w-lg mx-auto">
 
         {/* Back */}
@@ -50,7 +50,7 @@ export default function NuevaClasePage() {
           <Link
             href="/admin"
             className="w-9 h-9 rounded-xl flex items-center justify-center text-sm btn-press"
-            style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+            style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
           >
             ←
           </Link>
@@ -68,7 +68,7 @@ export default function NuevaClasePage() {
               onChange={(e) => set("nombre", e.target.value)}
               placeholder="Ej: Clase Glow Up x Javi Berga"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
             />
           </div>
 
@@ -81,7 +81,7 @@ export default function NuevaClasePage() {
                 value={form.fecha}
                 onChange={(e) => set("fecha", e.target.value)}
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+                style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
               />
             </div>
             <div>
@@ -91,7 +91,7 @@ export default function NuevaClasePage() {
                 value={form.hora}
                 onChange={(e) => set("hora", e.target.value)}
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+                style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
               />
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function NuevaClasePage() {
               onChange={(e) => set("lugar", e.target.value)}
               placeholder="Ej: Sala Apollo"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
             />
           </div>
 
@@ -119,7 +119,7 @@ export default function NuevaClasePage() {
                 onChange={(e) => set("precio", e.target.value)}
                 min="0"
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+                style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
               />
             </div>
             <div>
@@ -130,13 +130,13 @@ export default function NuevaClasePage() {
                 onChange={(e) => set("capacidad", e.target.value)}
                 min="1"
                 className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-                style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+                style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
               />
             </div>
           </div>
 
           {error && (
-            <p className="text-sm rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}>
+            <p className="text-sm rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}>
               {error}
             </p>
           )}
@@ -145,7 +145,7 @@ export default function NuevaClasePage() {
             onClick={handleGuardar}
             disabled={loading}
             className="w-full py-4 rounded-2xl text-sm font-medium btn-press disabled:opacity-50 anim-page"
-            style={{ backgroundColor: "#FFF0F5", color: "#1C0814", animationDelay: "240ms" }}
+            style={{ backgroundColor: "#FFFFFF", color: "#1C0814", animationDelay: "240ms" }}
           >
             {loading ? "Guardando..." : "Crear clase"}
           </button>

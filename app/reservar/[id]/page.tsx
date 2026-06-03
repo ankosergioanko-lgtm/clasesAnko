@@ -55,14 +55,14 @@ export default function ReservarPage() {
 
   if (!clase) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#F9B0C4" }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#FDE8F3" }}>
         <p className="text-sm anim-fade" style={{ color: "#C45A7A" }}>cargando...</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#F9B0C4" }}>
+    <div className="min-h-screen p-6 md:p-10" style={{ backgroundColor: "#FDE8F3" }}>
       <div className="max-w-lg mx-auto">
 
         {/* Back */}
@@ -71,7 +71,7 @@ export default function ReservarPage() {
           className="inline-flex items-center gap-2 text-sm mb-8 btn-press anim-fade"
           style={{ color: "#C45A7A" }}
         >
-          <span className="w-8 h-8 rounded-xl flex items-center justify-center text-sm" style={{ backgroundColor: "#F09FBA" }}>
+          <span className="w-8 h-8 rounded-xl flex items-center justify-center text-sm" style={{ backgroundColor: "#F7CEDF" }}>
             ←
           </span>
           volver
@@ -85,7 +85,7 @@ export default function ReservarPage() {
         </div>
 
         {/* Resumen clase */}
-        <div className="rounded-2xl p-4 mb-6 flex items-center justify-between anim-page" style={{ backgroundColor: "#F09FBA", animationDelay: "60ms" }}>
+        <div className="rounded-2xl p-4 mb-6 flex items-center justify-between anim-page" style={{ backgroundColor: "#F7CEDF", animationDelay: "60ms" }}>
           <div>
             <p className="font-medium" style={{ color: "#1C0814" }}>{clase.nombre}</p>
             <p className="text-sm" style={{ color: "#C45A7A" }}>{clase.lugar} · {clase.hora}</p>
@@ -103,7 +103,7 @@ export default function ReservarPage() {
               onChange={(e) => setNombre(e.target.value)}
               placeholder="Tu nombre"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
             />
           </div>
           <div className="anim-page">
@@ -114,7 +114,7 @@ export default function ReservarPage() {
               onChange={(e) => setApellido(e.target.value)}
               placeholder="Tu apellido"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
             />
           </div>
           <div className="anim-page">
@@ -125,13 +125,13 @@ export default function ReservarPage() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="tu@email.com"
               className="w-full rounded-2xl px-4 py-3 text-sm input-focus"
-              style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}
+              style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}
             />
           </div>
         </div>
 
         {error && (
-          <p className="text-sm mb-4 rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#F09FBA", color: "#1C0814" }}>
+          <p className="text-sm mb-4 rounded-xl px-4 py-3 anim-scale" style={{ backgroundColor: "#F7CEDF", color: "#1C0814" }}>
             {error}
           </p>
         )}
@@ -141,7 +141,7 @@ export default function ReservarPage() {
             onClick={handlePagar}
             disabled={loading}
             className="w-full flex items-center justify-center py-4 rounded-2xl text-base font-medium btn-press disabled:opacity-50"
-            style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
+            style={{ backgroundColor: "#FFFFFF", color: "#1C0814" }}
           >
             {loading ? "Redirigiendo..." : `Pagar €${clase.precio} con Bizum o tarjeta`}
           </button>

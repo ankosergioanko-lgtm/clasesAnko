@@ -2,11 +2,11 @@ import Link from "next/link"
 
 export default function ConfirmacionPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: "#F9B0C4" }}>
+    <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: "#FDE8F3" }}>
       <div className="max-w-md w-full text-center">
         <div
           className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl"
-          style={{ backgroundColor: "#F09FBA" }}
+          style={{ backgroundColor: "#F7CEDF" }}
         >
           ✓
         </div>
@@ -19,7 +19,7 @@ export default function ConfirmacionPage() {
         <Link
           href="/clases"
           className="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-sm font-medium transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#FFF0F5", color: "#1C0814" }}
+          style={{ backgroundColor: "#FFFFFF", color: "#1C0814" }}
         >
           Ver más clases
         </Link>
