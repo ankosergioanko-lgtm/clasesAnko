@@ -1,0 +1,17 @@
+[
+  {
+    "id": "clase-001",
+    "nombre": "Clase Glow Up x Javi Berga",
+    "fecha": "2026-06-10",
+    "hora": "20:00",
+    "lugar": "Sala Apollo",
+    "precio": 15,
+    "capacidad": 20,
+    "activa": true,
+    "gastos": [
+      { "nombre": "Sala", "monto": 0 },
+      { "nombre": "Videógrafo", "monto": 0 }
+    ],
+    "createdAt": "2026-06-03T10:00:00.000Z"
+  }
+]

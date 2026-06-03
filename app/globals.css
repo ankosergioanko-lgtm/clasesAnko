@@ -1,26 +1,139 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: #E3DFD9;
+  --color-surface: #D8D4CE;
+  --color-surface-hover: #CFCBC5;
+  --color-dark: #1C1C1E;
+  --color-text: #1C1C1E;
+  --color-muted: #888884;
+  --color-border: #C8C4BE;
+  --color-white: #F5F3EF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E3DFD9;
+  color: #1C1C1E;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Keyframes ─────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.93); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRow {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* ── Animation utilities ───────────────────── */
+.anim-page {
+  animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-fade {
+  animation: fadeIn 0.35s ease both;
+}
+
+.anim-scale {
+  animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-row {
+  animation: slideInRow 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger delays for up to 12 children */
+.stagger > *:nth-child(1)  { animation-delay:  0ms; }
+.stagger > *:nth-child(2)  { animation-delay: 55ms; }
+.stagger > *:nth-child(3)  { animation-delay: 110ms; }
+.stagger > *:nth-child(4)  { animation-delay: 165ms; }
+.stagger > *:nth-child(5)  { animation-delay: 220ms; }
+.stagger > *:nth-child(6)  { animation-delay: 275ms; }
+.stagger > *:nth-child(7)  { animation-delay: 330ms; }
+.stagger > *:nth-child(8)  { animation-delay: 385ms; }
+.stagger > *:nth-child(9)  { animation-delay: 440ms; }
+.stagger > *:nth-child(10) { animation-delay: 495ms; }
+.stagger > *:nth-child(11) { animation-delay: 550ms; }
+.stagger > *:nth-child(12) { animation-delay: 605ms; }
+
+/* ── Card hover ────────────────────────────── */
+.card-lift {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s ease;
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-3px) scale(1.012);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.09);
+}
+
+/* ── Button press ──────────────────────────── */
+.btn-press {
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.btn-press:active {
+  transform: scale(0.94);
+}
+
+/* ── Plus button pop ───────────────────────── */
+.btn-pop:active {
+  animation: pop 0.28s ease;
+}
+
+/* ── Input focus glow ──────────────────────── */
+.input-focus {
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.input-focus:focus {
+  box-shadow: 0 0 0 2px rgba(28,28,30,0.15);
+  outline: none;
+}
+
+/* ── Toggle transition ─────────────────────── */
+.toggle-btn {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ── Tab content fade ──────────────────────── */
+.tab-content {
+  animation: fadeIn 0.25s ease both;
+}
+
+/* ── Checkbox ──────────────────────────────── */
+input[type="checkbox"] {
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+/* ── Number spinner ────────────────────────── */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
 }
