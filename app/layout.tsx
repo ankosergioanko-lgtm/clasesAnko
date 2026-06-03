@@ -13,17 +13,29 @@ export const metadata: Metadata = {
   description: "reserva tu plaza · paga online",
 }
 
-// Estrellas borrosas: clip-path 5 puntas + blur = efecto glow
 const STARS = [
-  { top:  "4%",  left:  "2%",   size: 110, opacity: 0.38, blur: 22, delay: "0s",   dur: "9s"  },
-  { top: "12%",  right: "3%",   size: 75,  opacity: 0.28, blur: 16, delay: "1.6s", dur: "11s" },
-  { top: "32%",  left:  "0%",   size: 55,  opacity: 0.32, blur: 14, delay: "0.9s", dur: "8s"  },
-  { top: "50%",  right: "1%",   size: 90,  opacity: 0.26, blur: 20, delay: "2.3s", dur: "10s" },
-  { top: "68%",  left:  "3%",   size: 65,  opacity: 0.3,  blur: 15, delay: "1.1s", dur: "9s"  },
-  { top: "82%",  right: "4%",   size: 80,  opacity: 0.24, blur: 18, delay: "0.4s", dur: "12s" },
-  { top: "90%",  left:  "1%",   size: 50,  opacity: 0.28, blur: 12, delay: "3.2s", dur: "8s"  },
-  { top: "22%",  left:  "40%",  size: 40,  opacity: 0.15, blur: 10, delay: "2.8s", dur: "10s" },
+  { top: "3%",  left: "0%",   size: 110, blur: 22, opacity: 0.55, delay: "0s",   dur: "9s"  },
+  { top: "12%", right: "1%",  size: 80,  blur: 16, opacity: 0.45, delay: "1.6s", dur: "11s" },
+  { top: "33%", left: "-1%",  size: 60,  blur: 13, opacity: 0.5,  delay: "0.9s", dur: "8s"  },
+  { top: "52%", right: "0%",  size: 90,  blur: 19, opacity: 0.42, delay: "2.4s", dur: "10s" },
+  { top: "67%", left: "1%",   size: 65,  blur: 14, opacity: 0.48, delay: "1.2s", dur: "9s"  },
+  { top: "80%", right: "2%",  size: 75,  blur: 17, opacity: 0.4,  delay: "0.5s", dur: "12s" },
+  { top: "90%", left: "0%",   size: 50,  blur: 11, opacity: 0.45, delay: "3s",   dur: "8s"  },
 ]
+
+function starPoints(size: number): string {
+  const cx = size / 2
+  const cy = size / 2
+  const outerR = size / 2 * 0.9
+  const innerR  = size / 2 * 0.38
+  const pts: string[] = []
+  for (let i = 0; i < 10; i++) {
+    const angle = (i * Math.PI) / 5 - Math.PI / 2
+    const r = i % 2 === 0 ? outerR : innerR
+    pts.push(`${(cx + r * Math.cos(angle)).toFixed(1)},${(cy + r * Math.sin(angle)).toFixed(1)}`)
+  }
+  return pts.join(" ")
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -32,28 +44,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="min-h-full antialiased relative"
         style={{ fontFamily: "var(--font-geist-sans), -apple-system, sans-serif" }}
       >
-        {/* Estrellas borrosas de fondo */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        {/* Estrellas borrosas SVG — funciona en todos los navegadores */}
+        <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
           {STARS.map((s, i) => (
-            <div
+            <svg
               key={i}
               className="absolute star-float"
+              viewBox={`0 0 ${s.size} ${s.size}`}
               style={{
                 top: s.top,
                 left: "left" in s ? (s as { left: string }).left : undefined,
                 right: "right" in s ? (s as { right: string }).right : undefined,
-                width:  s.size,
+                width: s.size,
                 height: s.size,
+                overflow: "visible",
                 opacity: s.opacity,
                 animationDelay: s.delay,
                 animationDuration: s.dur,
-                filter: `blur(${s.blur}px)`,
-                backgroundColor: "#F472B6",
-                clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-                willChange: "transform",
-                transform: "translateZ(0)",
               }}
-            />
+            >
+              <defs>
+                <filter id={`sf${i}`} x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation={s.blur} />
+                </filter>
+              </defs>
+              <polygon
+                points={starPoints(s.size)}
+                fill="#F472B6"
+                filter={`url(#sf${i})`}
+              />
+            </svg>
           ))}
         </div>
         <div className="relative" style={{ zIndex: 1 }}>

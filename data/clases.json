@@ -1,17 +1,23 @@
 [
   {
-    "id": "clase-001",
-    "nombre": "Clase Glow Up x Javi Berga",
-    "fecha": "2026-06-10",
-    "hora": "20:00",
-    "lugar": "Sala Apollo",
+    "id": "91ca5f3a-476a-4bb4-bd3b-4f57c1d38205",
+    "nombre": "Deja Vu - Daniela Incera",
+    "fecha": "2026-06-17",
+    "hora": "19:00",
+    "lugar": "Sala Apolo",
     "precio": 15,
-    "capacidad": 20,
+    "capacidad": 90,
     "activa": true,
     "gastos": [
-      { "nombre": "Sala", "monto": 0 },
-      { "nombre": "Videógrafo", "monto": 0 }
+      {
+        "nombre": "Sala",
+        "monto": 0
+      },
+      {
+        "nombre": "Videógrafo",
+        "monto": 0
+      }
     ],
-    "createdAt": "2026-06-03T10:00:00.000Z"
+    "createdAt": "2026-06-03T12:41:51.222Z"
   }
 ]
